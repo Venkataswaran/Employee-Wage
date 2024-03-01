@@ -1,0 +1,25 @@
+class Employee:
+    def __init__(self, name, hours_worked, hourly_rate):
+        self.name = name
+        self.hours_worked = hours_worked
+        self.hourly_rate = hourly_rate
+
+    def calculate_pay(self):
+        return self.hours_worked * self.hourly_rate
+
+def main():
+    # Example data
+    employees = [
+        Employee("Alice", 40, 15),  # Alice worked 40 hours at $15/hour
+        Employee("Bob", 35, 20),    # Bob worked 35 hours at $20/hour
+        Employee("Charlie", 45, 18) # Charlie worked 45 hours at $18/hour
+    ]
+
+    # Calculate and display wages
+    print("Employee Wages:")
+    for emp in employees:
+        wage = emp.calculate_pay()
+        print(f"{emp.name}: ${wage:.2f}")
+
+if __name__ == "__main__":
+    main()
